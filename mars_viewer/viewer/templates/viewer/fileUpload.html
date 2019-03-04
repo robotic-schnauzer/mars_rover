@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1{
+    color: maroon;
+}
+body{
+	background-color: lightgrey
+}
+</style>
+</head>
+<body>
+<div id='heading-text'>
+  <h1>Upload a .txt file!</h1>
+	<h3>Please upload a text file containing dates with each date on its own line.</h3>
+	<h3>Downloading images takes time. Please wait before refreshing or uploading.</h3>
+</div>
+<div id='fileuploadform'>
+	<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<p>{{ form.title }}</p>
+		<p>{{ form.file }} </p>
+		
+		<p><input type="submit" value="Upload" /></p>
+</form>
+</div>
+
+</body>
+</html>
